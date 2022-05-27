@@ -5,3 +5,12 @@ class ContaCorrente:
         self.__numero_conta = numero_conta;
         self.__saldo = saldo;
         self.__limite = 1000.0;
+        
+    @property
+    def saldo(self):
+        return self.__saldo;
+    
+    @saldo.setter
+    def saldo(self, valor):
+        self.__saldo = valor;
+         
