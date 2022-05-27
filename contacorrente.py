@@ -14,6 +14,12 @@ class ContaCorrente:
     def saldo(self, valor):
         self.__saldo = valor;
         
+        
+    def consultar_saldo(self):
+        saldo = self.saldo;
+        print(f"Saldo: R$ {saldo:.2f}");
+        
+        
     def sacar(self,valor):
         if(valor <= self.saldo and self.saldo >= valor):
             valor_restante = self.saldo - valor;
