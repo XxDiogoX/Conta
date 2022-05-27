@@ -6,6 +6,22 @@ class ContaCorrente:
         self.__saldo = saldo;
         self.__limite = 1000.0;
         
+        
+    
+        
+    @property
+    def nome(self):
+        return self.__nome_titular;
+    
+    
+    @property
+    def numero_agencia(self):
+        return self.__numero_agencia;
+    
+    @property
+    def numero_conta(self):
+        return self.__numero_conta;
+        
     @property
     def saldo(self):
         return self.__saldo;
@@ -21,7 +37,7 @@ class ContaCorrente:
         
         
     def sacar(self,valor):
-        if(valor <= self.saldo and self.saldo >= valor):
+        if(valor <= self.saldo):
             valor_restante = self.saldo - valor;
             self.saldo = valor_restante;
             print(f"Saque de R$ {valor:.2f} realizado.\nSaldo Atual: R$ {self.saldo:.2f}");
@@ -36,6 +52,10 @@ class ContaCorrente:
             print(f"Deposito de R$ {valor:.2f} realizado com sucesso.")
         else:
             print("Impossível de realizar a operação");
+    
+    
+            
+            
 
             
         
