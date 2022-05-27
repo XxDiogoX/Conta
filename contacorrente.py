@@ -21,6 +21,15 @@ class ContaCorrente:
             print(f"Saque de R$ {valor:.2f} realizado.\nSaldo Atual: R$ {self.saldo:.2f}");
         else:
             print("Não foi possível realizar o saque!\nSaldo insuficiente..");
+            
+    
+    def depositar(self, valor):
+        if(valor > 0):
+            valor_atual = self.saldo + valor;
+            self.saldo = valor_atual;
+            print(f"Deposito de R$ {valor:.2f} realizado com sucesso.")
+        else:
+            print("Impossível de realizar a operação");
 
             
         
