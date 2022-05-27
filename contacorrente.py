@@ -7,8 +7,6 @@ class ContaCorrente:
         self.__limite = 1000.0;
         
         
-    
-        
     @property
     def nome(self):
         return self.__nome_titular;
@@ -52,6 +50,15 @@ class ContaCorrente:
             print(f"Deposito de R$ {valor:.2f} realizado com sucesso.")
         else:
             print("Impossível de realizar a operação");
+            
+    def transferir(self,valor,destinario):
+        if(valor <= self.saldo):
+            valor_restante = self.saldo - valor;
+            destinario.depositar(valor);
+            self.saldo = valor_restante;
+            print(f"Realizada a transferência de R$ {valor:.2f}.\nPara: {destinario.nome}\nAgência: {destinario.numero_agencia}\nNúmero da Conta: {destinario.numero_conta}.");
+        else:
+            print("Não foi possível realiza a operação!!");
     
     
             
