@@ -13,4 +13,17 @@ class ContaCorrente:
     @saldo.setter
     def saldo(self, valor):
         self.__saldo = valor;
+        
+    def sacar(self,valor):
+        if(valor <= self.saldo and self.saldo >= valor):
+            valor_restante = self.saldo - valor;
+            self.saldo = valor_restante;
+            print(f"Saque de R$ {valor:.2f} realizado.\nSaldo Atual: R$ {self.saldo:.2f}");
+        else:
+            print("Não foi possível realizar o saque!\nSaldo insuficiente..");
+
+            
+        
+        
+        
          
